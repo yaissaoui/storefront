@@ -10,7 +10,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/text",
+                "resourceType": "blocks/text",
                 "template": {}
               }
             }
@@ -23,8 +23,11 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/image",
-                "template": {}
+                "resourceType": "blocks/image",
+                "template": {
+                  "imageAlt": "",
+                  "image": ""
+                }
               }
             }
           }
@@ -41,7 +44,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/section",
+                "resourceType": "blocks/section",
                 "template": {}
               }
             }
@@ -63,7 +66,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/accordion",
+                "resourceType": "blocks/accordion",
                 "template": {}
               }
             }
@@ -76,8 +79,11 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/accordion-item",
-                "template": {}
+                "resourceType": "blocks/accordion-item",
+                "template": {
+                  "summary": "",
+                  "text": ""
+                }
               }
             }
           }
@@ -90,7 +96,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/cards",
+                "resourceType": "blocks/cards",
                 "template": {}
               }
             }
@@ -103,8 +109,12 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/card",
-                "template": {}
+                "resourceType": "blocks/card",
+                "template": {
+                  "image": "",
+                  "imageAlt": "",
+                  "text": ""
+                }
               }
             }
           }
@@ -117,7 +127,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/carousel",
+                "resourceType": "blocks/carousel",
                 "template": {}
               }
             }
@@ -130,8 +140,12 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/carousel-item",
-                "template": {}
+                "resourceType": "blocks/carousel-item",
+                "template": {
+                  "backgroundImage": "",
+                  "backgroundImageAlt": "",
+                  "text": ""
+                }
               }
             }
           }
@@ -144,7 +158,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/columns",
+                "resourceType": "blocks/columns",
                 "template": {}
               }
             }
@@ -158,7 +172,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/columns-row",
+                "resourceType": "blocks/columns-row",
                 "template": {}
               }
             }
@@ -172,7 +186,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/columns-cell",
+                "resourceType": "blocks/columns-cell",
                 "template": {}
               }
             }
@@ -185,7 +199,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/enrichment",
+                "resourceType": "blocks/enrichment",
                 "template": {}
               }
             }
@@ -198,8 +212,11 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/fragment",
-                "template": {}
+                "resourceType": "blocks/fragment",
+                "template": {
+                  "fragmentUrl": "",
+                  "fragmentUrlText": ""
+                }
               }
             }
           }
@@ -211,8 +228,12 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/hero",
-                "template": {}
+                "resourceType": "blocks/hero",
+                "template": {
+                  "image": "",
+                  "alt": "",
+                  "text": ""
+                }
               }
             }
           }
@@ -224,7 +245,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/targeted-block",
+                "resourceType": "blocks/targeted-block",
                 "template": {}
               }
             }
@@ -237,7 +258,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-account-header",
+                "resourceType": "blocks/commerce-account-header",
                 "template": {}
               }
             }
@@ -250,7 +271,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-account-sidebar",
+                "resourceType": "blocks/commerce-account-sidebar",
                 "template": {}
               }
             }
@@ -263,7 +284,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-addresses",
+                "resourceType": "blocks/commerce-addresses",
                 "template": {}
               }
             }
@@ -276,7 +297,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-cart",
+                "resourceType": "blocks/commerce-cart",
                 "template": {}
               }
             }
@@ -289,7 +310,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-checkout-success",
+                "resourceType": "blocks/commerce-checkout-success",
                 "template": {}
               }
             }
@@ -302,7 +323,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-checkout",
+                "resourceType": "blocks/commerce-checkout",
                 "template": {}
               }
             }
@@ -315,7 +336,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-confirm-account",
+                "resourceType": "blocks/commerce-confirm-account",
                 "template": {}
               }
             }
@@ -328,7 +349,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-create-account",
+                "resourceType": "blocks/commerce-create-account",
                 "template": {}
               }
             }
@@ -341,7 +362,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-create-password",
+                "resourceType": "blocks/commerce-create-password",
                 "template": {}
               }
             }
@@ -354,7 +375,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-create-return",
+                "resourceType": "blocks/commerce-create-return",
                 "template": {}
               }
             }
@@ -367,7 +388,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-customer-details",
+                "resourceType": "blocks/commerce-customer-details",
                 "template": {}
               }
             }
@@ -380,7 +401,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-customer-information",
+                "resourceType": "blocks/commerce-customer-information",
                 "template": {}
               }
             }
@@ -393,7 +414,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-forgot-password",
+                "resourceType": "blocks/commerce-forgot-password",
                 "template": {}
               }
             }
@@ -406,7 +427,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-gift-options",
+                "resourceType": "blocks/commerce-gift-options",
                 "template": {}
               }
             }
@@ -419,7 +440,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-login",
+                "resourceType": "blocks/commerce-login",
                 "template": {}
               }
             }
@@ -432,7 +453,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-mini-cart",
+                "resourceType": "blocks/commerce-mini-cart",
                 "template": {}
               }
             }
@@ -445,7 +466,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-comments",
+                "resourceType": "blocks/commerce-order-comments",
                 "template": {}
               }
             }
@@ -458,7 +479,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-cost-summary",
+                "resourceType": "blocks/commerce-order-cost-summary",
                 "template": {}
               }
             }
@@ -471,7 +492,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-header",
+                "resourceType": "blocks/commerce-order-header",
                 "template": {}
               }
             }
@@ -484,7 +505,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-product-list",
+                "resourceType": "blocks/commerce-order-product-list",
                 "template": {}
               }
             }
@@ -497,7 +518,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-returns",
+                "resourceType": "blocks/commerce-order-returns",
                 "template": {}
               }
             }
@@ -510,7 +531,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-order-status",
+                "resourceType": "blocks/commerce-order-status",
                 "template": {}
               }
             }
@@ -523,7 +544,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-orders-list",
+                "resourceType": "blocks/commerce-orders-list",
                 "template": {}
               }
             }
@@ -536,7 +557,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-return-header",
+                "resourceType": "blocks/commerce-return-header",
                 "template": {}
               }
             }
@@ -549,7 +570,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-returns-list",
+                "resourceType": "blocks/commerce-returns-list",
                 "template": {}
               }
             }
@@ -562,7 +583,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-search-order",
+                "resourceType": "blocks/commerce-search-order",
                 "template": {}
               }
             }
@@ -575,7 +596,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-shipping-status",
+                "resourceType": "blocks/commerce-shipping-status",
                 "template": {}
               }
             }
@@ -588,7 +609,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/commerce-wishlist",
+                "resourceType": "blocks/commerce-wishlist",
                 "template": {}
               }
             }
@@ -607,7 +628,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/product-details",
+                "resourceType": "blocks/product-details",
                 "template": {}
               }
             }
@@ -620,7 +641,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/product-list-page",
+                "resourceType": "blocks/product-list-page",
                 "template": {}
               }
             }
@@ -633,7 +654,7 @@
           "plugins": {
             "aem": {
               "page": {
-                "resourceType": "wknd/components/product-recommendations",
+                "resourceType": "blocks/product-recommendations",
                 "template": {}
               }
             }

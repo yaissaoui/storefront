@@ -570,9 +570,6 @@ function decorateBlock(block) {
     block.classList.add('block');
     block.dataset.blockName = shortBlockName;
     block.dataset.blockStatus = 'initialized';
-    block.dataset.aueComponent = shortBlockName;
-    block.dataset.aueType = 'component';
-    block.dataset.aueResource = `urn:aemconnection:${window.location.pathname}`;
     wrapTextNodes(block);
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
