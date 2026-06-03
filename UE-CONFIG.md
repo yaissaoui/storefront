@@ -245,6 +245,34 @@ Instrumentation Universal Editor dans le `<head>` :
 
 ---
 
+## 6. scripts/aem.js - Ajout des attributs UE
+
+Le `decorateBlock` dans `scripts/aem.js` doit ajouter les attributs `data-aue-*` pour que le Universal Editor détecte les blocks :
+
+```javascript
+function decorateBlock(block) {
+  const shortBlockName = block.classList[0];
+  if (shortBlockName) {
+    block.classList.add('block');
+    block.dataset.blockName = shortBlockName;
+    block.dataset.blockStatus = 'initialized';
+    block.dataset.aueComponent = shortBlockName;
+    block.dataset.aueResource = `${window.location.pathname}?aue-sel=/${window.location.pathname.replace(/^\//, '').replace(/\/$/, '')}`;
+    wrapTextNodes(block);
+    const blockWrapper = block.parentElement;
+    blockWrapper.classList.add(`${shortBlockName}-wrapper`);
+    const section = block.closest('.section');
+    if (section) section.classList.add(`${shortBlockName}-container`);
+  }
+}
+```
+
+**Attributs ajoutés :**
+- `data-aue-component` — Le type du block (ex: "hero", "columns", "cards")
+- `data-aue-resource` — Le chemin de la ressource pour le UE
+
+---
+
 ## Points critiques
 
 ### CSP (Content Security-Policy)
@@ -264,6 +292,58 @@ Les fichiers suivants doivent exister dans le repo :
 - `component-models.json` (généré automatiquement)
 - `component-filters.json` (généré automatiquement)
 - `blocks/{block-name}/_{block-name}.json` (instrumentation par bloc)
+
+### Format des block JSON
+Chaque block éditable doit avoir un fichier `_{block-name}.json` avec le format :
+
+```json
+{
+  "definitions": [
+    {
+      "title": "Block Name",
+      "id": "block-name",
+      "model": "block-name",
+      "plugins": {
+        "da": {
+          "rows": 1,
+          "columns": 1,
+          "fields": [
+            { "name": "image", "selector": "div>div>picture>img[src]" },
+            { "name": "alt", "selector": "div>div>picture>img[alt]" },
+            { "name": "text", "selector": "div>div>h1" }
+          ]
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "block-name",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
+```
+
+### Contenu da.live
+Le contenu doit être crée/édité avec le Universal Editor pour avoir les attributs `data-aue-*`. L'éditeur DA standard n'ajoute pas ces attributs. Quand tu édites une page avec le UE, il sauvegarde le HTML avec les bons attributs.
 
 ### Contenu da.live
 Le contenu doit être crée/édité avec le Universal Editor pour avoir les attributs `data-aue-*`. L'éditeur DA standard n'ajoute pas ces attributs.
