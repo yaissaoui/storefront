@@ -8,9 +8,11 @@
           "title": "Text",
           "id": "text",
           "plugins": {
-            "da": {
-              "name": "text",
-              "type": "text"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/text",
+                "template": {}
+              }
             }
           }
         },
@@ -19,19 +21,14 @@
           "id": "image",
           "model": "image",
           "plugins": {
-            "da": {
-              "name": "image",
-              "type": "image",
-              "fields": [
-                {
-                  "name": "imageAlt",
-                  "selector": "img[alt]"
-                },
-                {
-                  "name": "image",
-                  "selector": "img[src]"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/image",
+                "template": {
+                  "imageAlt": "",
+                  "image": ""
                 }
-              ]
+              }
             }
           }
         }
@@ -45,8 +42,11 @@
           "title": "Section",
           "id": "section",
           "plugins": {
-            "da": {
-              "unsafeHTML": "<div></div>"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/section",
+                "template": {}
+              }
             }
           },
           "filter": "section",
@@ -64,10 +64,11 @@
           "model": "accordion",
           "filter": "accordion",
           "plugins": {
-            "da": {
-              "name": "accordion",
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/accordion",
+                "template": {}
+              }
             }
           }
         },
@@ -76,20 +77,14 @@
           "id": "accordion-item",
           "model": "accordion-item",
           "plugins": {
-            "da": {
-              "name": "accordion-item",
-              "rows": 2,
-              "columns": 0,
-              "fields": [
-                {
-                  "name": "summary",
-                  "selector": "div:nth-child(1)"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/accordion-item",
+                "template": {
+                  "summary": "",
+                  "text": ""
                 }
-              ]
+              }
             }
           }
         },
@@ -99,9 +94,11 @@
           "model": "cards",
           "filter": "cards",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/cards",
+                "template": {}
+              }
             }
           }
         },
@@ -110,23 +107,15 @@
           "id": "card",
           "model": "card",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2,
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "div:nth-child(1)>picture>img[src]"
-                },
-                {
-                  "name": "imageAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/card",
+                "template": {
+                  "image": "",
+                  "imageAlt": "",
+                  "text": ""
                 }
-              ]
+              }
             }
           }
         },
@@ -136,9 +125,11 @@
           "model": "carousel",
           "filter": "carousel",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/carousel",
+                "template": {}
+              }
             }
           }
         },
@@ -147,23 +138,15 @@
           "id": "carousel-item",
           "model": "carousel-item",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2,
-              "fields": [
-                {
-                  "name": "backgroundImage",
-                  "selector": "div:nth-child(1)>picture>img[src]"
-                },
-                {
-                  "name": "backgroundImageAlt",
-                  "selector": "div:nth-child(1)>picture>img[alt]"
-                },
-                {
-                  "name": "text",
-                  "selector": "div:nth-child(2)"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/carousel-item",
+                "template": {
+                  "backgroundImage": "",
+                  "backgroundImageAlt": "",
+                  "text": ""
                 }
-              ]
+              }
             }
           }
         },
@@ -173,11 +156,11 @@
           "model": "columns",
           "filter": "columns",
           "plugins": {
-            "da": {
-              "name": "columns",
-              "rows": 1,
-              "columns": 2,
-              "behaviour": "columns"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/columns",
+                "template": {}
+              }
             }
           }
         },
@@ -187,9 +170,11 @@
           "model": "columns-row",
           "filter": "columns-row",
           "plugins": {
-            "da": {
-              "name": "columns-row",
-              "behaviour": "columns-row"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/columns-row",
+                "template": {}
+              }
             }
           }
         },
@@ -199,9 +184,11 @@
           "model": "columns-cell",
           "filter": "columns-cell",
           "plugins": {
-            "da": {
-              "unsafeHTML": "<div></div>",
-              "behaviour": "columns-cell"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/columns-cell",
+                "template": {}
+              }
             }
           }
         },
@@ -210,8 +197,11 @@
           "id": "enrichment",
           "model": "enrichment",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/enrichment",
+                "template": {}
+              }
             }
           }
         },
@@ -220,19 +210,14 @@
           "id": "fragment",
           "model": "fragment",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "fragmentUrl",
-                  "selector": "div>div>p>a[href]"
-                },
-                {
-                  "name": "fragmentUrlText",
-                  "selector": "div>div>p>a"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/fragment",
+                "template": {
+                  "fragmentUrl": "",
+                  "fragmentUrlText": ""
                 }
-              ]
+              }
             }
           }
         },
@@ -241,23 +226,15 @@
           "id": "hero",
           "model": "hero",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 1,
-              "fields": [
-                {
-                  "name": "image",
-                  "selector": "div>div>picture>img[src]"
-                },
-                {
-                  "name": "alt",
-                  "selector": "div>div>picture>img[alt]"
-                },
-                {
-                  "name": "text",
-                  "selector": "div>div>h1"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/hero",
+                "template": {
+                  "image": "",
+                  "alt": "",
+                  "text": ""
                 }
-              ]
+              }
             }
           }
         },
@@ -266,8 +243,11 @@
           "id": "targeted-block",
           "model": "targeted-block",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/targeted-block",
+                "template": {}
+              }
             }
           }
         },
@@ -276,8 +256,11 @@
           "id": "commerce-account-header",
           "model": "commerce-account-header",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-account-header",
+                "template": {}
+              }
             }
           }
         },
@@ -286,9 +269,11 @@
           "id": "commerce-account-sidebar",
           "model": "commerce-account-sidebar",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-account-sidebar",
+                "template": {}
+              }
             }
           }
         },
@@ -297,8 +282,11 @@
           "id": "commerce-addresses",
           "model": "commerce-addresses",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-addresses",
+                "template": {}
+              }
             }
           }
         },
@@ -307,8 +295,11 @@
           "id": "commerce-cart",
           "model": "commerce-cart",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-cart",
+                "template": {}
+              }
             }
           }
         },
@@ -317,9 +308,11 @@
           "id": "commerce-checkout-success",
           "model": "commerce-checkout-success",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-checkout-success",
+                "template": {}
+              }
             }
           }
         },
@@ -328,9 +321,11 @@
           "id": "commerce-checkout",
           "model": "commerce-checkout",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-checkout",
+                "template": {}
+              }
             }
           }
         },
@@ -339,9 +334,11 @@
           "id": "commerce-confirm-account",
           "model": "commerce-confirm-account",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-confirm-account",
+                "template": {}
+              }
             }
           }
         },
@@ -350,9 +347,11 @@
           "id": "commerce-create-account",
           "model": "commerce-create-account",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-create-account",
+                "template": {}
+              }
             }
           }
         },
@@ -361,9 +360,11 @@
           "id": "commerce-create-password",
           "model": "commerce-create-password",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-create-password",
+                "template": {}
+              }
             }
           }
         },
@@ -372,9 +373,11 @@
           "id": "commerce-create-return",
           "model": "commerce-create-return",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-create-return",
+                "template": {}
+              }
             }
           }
         },
@@ -383,9 +386,11 @@
           "id": "commerce-customer-details",
           "model": "commerce-customer-details",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-customer-details",
+                "template": {}
+              }
             }
           }
         },
@@ -394,9 +399,11 @@
           "id": "commerce-customer-information",
           "model": "commerce-customer-information",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-customer-information",
+                "template": {}
+              }
             }
           }
         },
@@ -405,9 +412,11 @@
           "id": "commerce-forgot-password",
           "model": "commerce-forgot-password",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-forgot-password",
+                "template": {}
+              }
             }
           }
         },
@@ -416,9 +425,11 @@
           "id": "commerce-gift-options",
           "model": "commerce-gift-options",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-gift-options",
+                "template": {}
+              }
             }
           }
         },
@@ -427,9 +438,11 @@
           "id": "commerce-login",
           "model": "commerce-login",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-login",
+                "template": {}
+              }
             }
           }
         },
@@ -438,8 +451,11 @@
           "id": "commerce-mini-cart",
           "model": "commerce-mini-cart",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-mini-cart",
+                "template": {}
+              }
             }
           }
         },
@@ -448,9 +464,11 @@
           "id": "commerce-order-comments",
           "model": "commerce-order-comments",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-comments",
+                "template": {}
+              }
             }
           }
         },
@@ -459,9 +477,11 @@
           "id": "commerce-order-cost-summary",
           "model": "commerce-order-cost-summary",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-cost-summary",
+                "template": {}
+              }
             }
           }
         },
@@ -470,9 +490,11 @@
           "id": "commerce-order-header",
           "model": "commerce-order-header",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-header",
+                "template": {}
+              }
             }
           }
         },
@@ -481,9 +503,11 @@
           "id": "commerce-order-product-list",
           "model": "commerce-order-product-list",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-product-list",
+                "template": {}
+              }
             }
           }
         },
@@ -492,9 +516,11 @@
           "id": "commerce-order-returns",
           "model": "commerce-order-returns",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-returns",
+                "template": {}
+              }
             }
           }
         },
@@ -503,9 +529,11 @@
           "id": "commerce-order-status",
           "model": "commerce-order-status",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-order-status",
+                "template": {}
+              }
             }
           }
         },
@@ -514,8 +542,11 @@
           "id": "commerce-orders-list",
           "model": "commerce-orders-list",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-orders-list",
+                "template": {}
+              }
             }
           }
         },
@@ -524,9 +555,11 @@
           "id": "commerce-return-header",
           "model": "commerce-return-header",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-return-header",
+                "template": {}
+              }
             }
           }
         },
@@ -535,8 +568,11 @@
           "id": "commerce-returns-list",
           "model": "commerce-returns-list",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-returns-list",
+                "template": {}
+              }
             }
           }
         },
@@ -545,9 +581,11 @@
           "id": "commerce-search-order",
           "model": "commerce-search-order",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-search-order",
+                "template": {}
+              }
             }
           }
         },
@@ -556,9 +594,11 @@
           "id": "commerce-shipping-status",
           "model": "commerce-shipping-status",
           "plugins": {
-            "da": {
-              "rows": 1,
-              "columns": 2
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-shipping-status",
+                "template": {}
+              }
             }
           }
         },
@@ -567,8 +607,11 @@
           "id": "commerce-wishlist",
           "model": "commerce-wishlist",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/commerce-wishlist",
+                "template": {}
+              }
             }
           }
         }
@@ -583,8 +626,11 @@
           "id": "product-details",
           "model": "product-details",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/product-details",
+                "template": {}
+              }
             }
           }
         },
@@ -593,8 +639,11 @@
           "id": "product-list-page",
           "model": "product-list-page",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/product-list-page",
+                "template": {}
+              }
             }
           }
         },
@@ -603,8 +652,11 @@
           "id": "product-recommendations",
           "model": "product-recommendations",
           "plugins": {
-            "da": {
-              "type": "key-value-block"
+            "aem": {
+              "page": {
+                "resourceType": "blocks/product-recommendations",
+                "template": {}
+              }
             }
           }
         }
