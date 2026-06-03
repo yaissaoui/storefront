@@ -1,70 +1,80 @@
 {
   "version": 1,
   "code": {
-    "owner": "{ORG}",
-    "repo": "{REPO}",
+    "owner": "yaissaoui",
+    "repo": "storefront",
     "source": {
       "type": "github",
-      "url": "https://github.com/{ORG}/{REPO}"
+      "url": "https://github.com/yaissaoui/storefront"
     }
   },
   "content": {
     "source": {
-      "url": "{CONTENT_SOURCE}",
+      "url": "https://content.da.live/yaissaoui/storefront/",
       "type": "onedrive"
     }
   },
+  "folders": {
+    "/products/": "/products/default"
+  },
   "cdn": {
     "live": {
-      "host": "main--{SITE}--{ORG}.aem.live"
+      "host": "main--storefront--yaissaoui.aem.live"
     },
     "preview": {
-      "host": "main--{SITE}--{ORG}.aem.page"
+      "host": "main--storefront--yaissaoui.aem.page"
     }
   },
   "headers": {},
   "public": {
     "default": {
-      "commerce-core-endpoint": "{ENDPOINT}",
-      "commerce-endpoint": "{CS_ENDPOINT}",
+      "commerce-core-endpoint": "https://na1-sandbox.api.commerce.adobe.com/QyHA1HUbXt5J6hX5jPNWXF/graphql",
+      "commerce-endpoint": "https://na1-sandbox.api.commerce.adobe.com/QyHA1HUbXt5J6hX5jPNWXF/graphql",
+      "commerce-assets-enabled": false,
+      "commerce-b2b-enabled": true,
+      "commerce-companies-enabled": true,
       "headers": {
         "all": {
           "Store": "default"
         },
         "cs": {
-          "Magento-Store-Code": "{STORE_CODE}",
-          "Magento-Store-View-Code": "{STORE_VIEW_CODE}",
-          "Magento-Website-Code": "{WEBSITE_CODE}",
-          "x-api-key": "{COMMERCE_API_KEY}",
-          "Magento-Environment-Id": "{COMMERCE_ENVIRONMENT_ID}"
+          "Magento-Store-Code": "main_website_store",
+          "Magento-Store-View-Code": "default",
+          "Magento-Website-Code": "base"
         }
       },
       "analytics": {
-        "base-currency-code": "USD",
-        "environment": "Production",
-        "store-id": "{STORE_ID}",
-        "store-name": "Main Website Store",
-        "store-url": "{DOMAIN}",
-        "store-view-id": "{STORE_VIEW_ID}",
+        "aep-ims-org-id": null,
+        "aep-datastream-id": null,
+        "base-currency-code": "EUR",
+        "environment": "Testing",
+        "environment-id": "QyHA1HUbXt5J6hX5jPNWXF",
+        "store-code": "main_website_store",
+        "store-id": "main_website_store",
+        "store-name": "Default Store View",
+        "store-url": "https://na1-sandbox.api.commerce.adobe.com/QyHA1HUbXt5J6hX5jPNWXF/",
+        "store-view-code": "default",
+        "store-view-id": "default",
         "store-view-name": "Default Store View",
-        "website-id": "{WEBSITE_ID}",
+        "website-code": "base",
+        "website-id": "base",
         "website-name": "Main Website"
       },
       "plugins": {
         "picker": {
-           "rootCategory": "{YOUR_ROOT_CATEGORY_ID}"
-         }
+          "rootCategory": "2"
+        }
       }
     }
   },
   "robots": {
-    "txt": "User-agent: *\nAllow: /\nDisallow: /drafts/\nDisallow: /enrichment/\nDisallow: /tools/\nDisallow: /plugins/experimentation/\n\nSitemap: https://{DOMAIN}/sitemap-index.xml"
+    "txt": "User-agent: *\nAllow: /\nDisallow: /drafts/\nDisallow: /enrichment/\nDisallow: /tools/\nDisallow: /plugins/experimentation/\n\nSitemap: https://main--storefront--yaissaoui.aem.live/sitemap-index.xml"
   },
   "access": {
     "admin": {
       "role": {
         "config_admin": [
-          "{ADMIN_USER_EMAIL}"
+          "yaissaoui"
         ]
       },
       "requireAuth": "auto"
