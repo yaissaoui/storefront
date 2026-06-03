@@ -571,7 +571,8 @@ function decorateBlock(block) {
     block.dataset.blockName = shortBlockName;
     block.dataset.blockStatus = 'initialized';
     block.dataset.aueComponent = shortBlockName;
-    block.dataset.aueResource = `${window.location.pathname}?aue-sel=/${window.location.pathname.replace(/^\//, '').replace(/\/$/, '')}`;
+    block.dataset.aueType = 'component';
+    block.dataset.aueResource = `urn:aemconnection:${window.location.pathname}`;
     wrapTextNodes(block);
     const blockWrapper = block.parentElement;
     blockWrapper.classList.add(`${shortBlockName}-wrapper`);
