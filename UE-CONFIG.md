@@ -245,34 +245,6 @@ Instrumentation Universal Editor dans le `<head>` :
 
 ---
 
-## 6. scripts/aem.js - Ajout des attributs UE
-
-Le `decorateBlock` dans `scripts/aem.js` doit ajouter les attributs `data-aue-*` pour que le Universal Editor détecte les blocks :
-
-```javascript
-function decorateBlock(block) {
-  const shortBlockName = block.classList[0];
-  if (shortBlockName) {
-    block.classList.add('block');
-    block.dataset.blockName = shortBlockName;
-    block.dataset.blockStatus = 'initialized';
-    block.dataset.aueComponent = shortBlockName;
-    block.dataset.aueResource = `${window.location.pathname}?aue-sel=/${window.location.pathname.replace(/^\//, '').replace(/\/$/, '')}`;
-    wrapTextNodes(block);
-    const blockWrapper = block.parentElement;
-    blockWrapper.classList.add(`${shortBlockName}-wrapper`);
-    const section = block.closest('.section');
-    if (section) section.classList.add(`${shortBlockName}-container`);
-  }
-}
-```
-
-**Attributs ajoutés :**
-- `data-aue-component` — Le type du block (ex: "hero", "columns", "cards")
-- `data-aue-resource` — Le chemin de la ressource pour le UE
-
----
-
 ## Points critiques
 
 ### CSP (Content Security-Policy)
