@@ -178,10 +178,6 @@ Instrumentation Universal Editor dans le `<head>` :
 >
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Universal Editor - Meta tags de connexion -->
-<meta name="urn:adobe:aue:system" content="aem">
-<meta name="urn:adobe:aue:config:service" content="https://universal-editor-service.adobe.io">
-
 <!-- Universal Editor - CORS library (AVEC nonce CSP !) -->
 <script nonce="aem" src="https://universal-editor-service.adobe.io/cors.js" async></script>
 
@@ -260,9 +256,9 @@ Le script `cors.js` **DOIT** avoir le `nonce="aem"` pour passer le CSP. Sans ça
 
 ### Fichiers UE instrumentation
 Les fichiers suivants doivent exister dans le repo :
-- `component-definition.json` (généré automatiquement)
-- `component-models.json` (généré automatiquement)
-- `component-filters.json` (généré automatiquement)
+- `component-definition.json` (format `da` plugin)
+- `component-models.json` (définitions des champs)
+- `component-filters.json` (relations entre blocks)
 - `blocks/{block-name}/_{block-name}.json` (instrumentation par bloc)
 
 ### Format des block JSON
@@ -304,8 +300,7 @@ Chaque block éditable doit avoir un fichier `_{block-name}.json` avec le format
           "valueType": "string",
           "name": "text",
           "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "label": "Text"
         }
       ]
     }
@@ -317,8 +312,8 @@ Chaque block éditable doit avoir un fichier `_{block-name}.json` avec le format
 ### Contenu da.live
 Le contenu doit être crée/édité avec le Universal Editor pour avoir les attributs `data-aue-*`. L'éditeur DA standard n'ajoute pas ces attributs. Quand tu édites une page avec le UE, il sauvegarde le HTML avec les bons attributs.
 
-### Contenu da.live
-Le contenu doit être crée/édité avec le Universal Editor pour avoir les attributs `data-aue-*`. L'éditeur DA standard n'ajoute pas ces attributs.
+### Connection da.live
+da.live gère automatiquement la connection au Universal Editor quand la page est ouverte via `*.ue.da.live`. Pas besoin de meta tags `urn:adobe:aue:system` dans le HTML.
 
 ---
 
@@ -328,7 +323,7 @@ Le contenu doit être crée/édité avec le Universal Editor pour avoir les attr
 |---|---|
 | da.live (contenu) | https://da.live |
 | da.live config | https://da.live/config#/yaissaoui/ |
-| Universal Editor | https://experience.adobe.com (menu → Universal Editor) |
+| Universal Editor (via da.live) | https://da.live/#/yaissaoui/storefront/ |
 | Site live | https://main--storefront--yaissaoui.aem.live/ |
 | Site preview | https://main--storefront--yaissaoui.aem.page/ |
 | UE CORS library | https://universal-editor-service.adobe.io/cors.js |
@@ -338,13 +333,12 @@ Le contenu doit être crée/édité avec le Universal Editor pour avoir les attr
 
 ## Checklist de déploiement
 
-1. [ ] `config.json` - Backend Commerce configuré (PaaS ou ACCS)
+1. [ ] `config.json` - Backend Commerce configuré (ACCS/SaaS)
 2. [ ] `fstab.yaml` - Mount points da.live configurés
 3. [ ] `default-site.json` - Tous les placeholders remplacés
-4. [ ] `head.html` - Meta tags UE + CORS library avec nonce
+4. [ ] `head.html` - CORS library avec nonce
 5. [ ] `editor.path` configuré dans da.live
-6. [ ] Contenu créé dans da.live avec le Universal Editor
-7. [ ] Fichiers `component-*.json` générés et commités
-8. [ ] Pipeline GitHub Actions réussie
-9. [ ] Site live accessible et fonctionnel
-10. [ ] Universal Editor se connecte sans erreur
+6. [ ] Fichiers `component-*.json` au format `da` plugin
+7. [ ] Pipeline GitHub Actions réussie
+8. [ ] Site live accessible et fonctionnel
+9. [ ] Ouvrir via da.live pour tester le UE
