@@ -8,11 +8,9 @@
           "title": "Text",
           "id": "text",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/text",
-                "template": {}
-              }
+            "da": {
+              "name": "text",
+              "type": "text"
             }
           }
         },
@@ -21,14 +19,19 @@
           "id": "image",
           "model": "image",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/image",
-                "template": {
-                  "imageAlt": "",
-                  "image": ""
+            "da": {
+              "name": "image",
+              "type": "image",
+              "fields": [
+                {
+                  "name": "imageAlt",
+                  "selector": "img[alt]"
+                },
+                {
+                  "name": "image",
+                  "selector": "img[src]"
                 }
-              }
+              ]
             }
           }
         }
@@ -42,11 +45,8 @@
           "title": "Section",
           "id": "section",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/section",
-                "template": {}
-              }
+            "da": {
+              "unsafeHTML": "<div></div>"
             }
           },
           "filter": "section",
@@ -64,11 +64,10 @@
           "model": "accordion",
           "filter": "accordion",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/accordion",
-                "template": {}
-              }
+            "da": {
+              "name": "accordion",
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -77,14 +76,20 @@
           "id": "accordion-item",
           "model": "accordion-item",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/accordion-item",
-                "template": {
-                  "summary": "",
-                  "text": ""
+            "da": {
+              "name": "accordion-item",
+              "rows": 2,
+              "columns": 0,
+              "fields": [
+                {
+                  "name": "summary",
+                  "selector": "div:nth-child(1)"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
@@ -94,11 +99,9 @@
           "model": "cards",
           "filter": "cards",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/cards",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -107,15 +110,23 @@
           "id": "card",
           "model": "card",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/card",
-                "template": {
-                  "image": "",
-                  "imageAlt": "",
-                  "text": ""
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "imageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
@@ -125,11 +136,9 @@
           "model": "carousel",
           "filter": "carousel",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/carousel",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -138,15 +147,23 @@
           "id": "carousel-item",
           "model": "carousel-item",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/carousel-item",
-                "template": {
-                  "backgroundImage": "",
-                  "backgroundImageAlt": "",
-                  "text": ""
+            "da": {
+              "rows": 1,
+              "columns": 2,
+              "fields": [
+                {
+                  "name": "backgroundImage",
+                  "selector": "div:nth-child(1)>picture>img[src]"
+                },
+                {
+                  "name": "backgroundImageAlt",
+                  "selector": "div:nth-child(1)>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div:nth-child(2)"
                 }
-              }
+              ]
             }
           }
         },
@@ -156,11 +173,11 @@
           "model": "columns",
           "filter": "columns",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/columns",
-                "template": {}
-              }
+            "da": {
+              "name": "columns",
+              "rows": 1,
+              "columns": 2,
+              "behaviour": "columns"
             }
           }
         },
@@ -170,11 +187,9 @@
           "model": "columns-row",
           "filter": "columns-row",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/columns-row",
-                "template": {}
-              }
+            "da": {
+              "name": "columns-row",
+              "behaviour": "columns-row"
             }
           }
         },
@@ -184,11 +199,9 @@
           "model": "columns-cell",
           "filter": "columns-cell",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/columns-cell",
-                "template": {}
-              }
+            "da": {
+              "unsafeHTML": "<div></div>",
+              "behaviour": "columns-cell"
             }
           }
         },
@@ -197,11 +210,8 @@
           "id": "enrichment",
           "model": "enrichment",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/enrichment",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -210,14 +220,19 @@
           "id": "fragment",
           "model": "fragment",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/fragment",
-                "template": {
-                  "fragmentUrl": "",
-                  "fragmentUrlText": ""
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "fragmentUrl",
+                  "selector": "div>div>p>a[href]"
+                },
+                {
+                  "name": "fragmentUrlText",
+                  "selector": "div>div>p>a"
                 }
-              }
+              ]
             }
           }
         },
@@ -226,15 +241,23 @@
           "id": "hero",
           "model": "hero",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/hero",
-                "template": {
-                  "image": "",
-                  "alt": "",
-                  "text": ""
+            "da": {
+              "rows": 1,
+              "columns": 1,
+              "fields": [
+                {
+                  "name": "image",
+                  "selector": "div>div>picture>img[src]"
+                },
+                {
+                  "name": "alt",
+                  "selector": "div>div>picture>img[alt]"
+                },
+                {
+                  "name": "text",
+                  "selector": "div>div>h1"
                 }
-              }
+              ]
             }
           }
         },
@@ -243,11 +266,8 @@
           "id": "targeted-block",
           "model": "targeted-block",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/targeted-block",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -256,11 +276,8 @@
           "id": "commerce-account-header",
           "model": "commerce-account-header",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-account-header",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -269,11 +286,9 @@
           "id": "commerce-account-sidebar",
           "model": "commerce-account-sidebar",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-account-sidebar",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -282,11 +297,8 @@
           "id": "commerce-addresses",
           "model": "commerce-addresses",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-addresses",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -295,11 +307,8 @@
           "id": "commerce-cart",
           "model": "commerce-cart",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-cart",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -308,11 +317,9 @@
           "id": "commerce-checkout-success",
           "model": "commerce-checkout-success",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-checkout-success",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -321,11 +328,9 @@
           "id": "commerce-checkout",
           "model": "commerce-checkout",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-checkout",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -334,11 +339,9 @@
           "id": "commerce-confirm-account",
           "model": "commerce-confirm-account",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-confirm-account",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -347,11 +350,9 @@
           "id": "commerce-create-account",
           "model": "commerce-create-account",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-create-account",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -360,11 +361,9 @@
           "id": "commerce-create-password",
           "model": "commerce-create-password",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-create-password",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -373,11 +372,9 @@
           "id": "commerce-create-return",
           "model": "commerce-create-return",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-create-return",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -386,11 +383,9 @@
           "id": "commerce-customer-details",
           "model": "commerce-customer-details",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-customer-details",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -399,11 +394,9 @@
           "id": "commerce-customer-information",
           "model": "commerce-customer-information",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-customer-information",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -412,11 +405,9 @@
           "id": "commerce-forgot-password",
           "model": "commerce-forgot-password",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-forgot-password",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -425,11 +416,9 @@
           "id": "commerce-gift-options",
           "model": "commerce-gift-options",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-gift-options",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -438,11 +427,9 @@
           "id": "commerce-login",
           "model": "commerce-login",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-login",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -451,11 +438,8 @@
           "id": "commerce-mini-cart",
           "model": "commerce-mini-cart",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-mini-cart",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -464,11 +448,9 @@
           "id": "commerce-order-comments",
           "model": "commerce-order-comments",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-comments",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -477,11 +459,9 @@
           "id": "commerce-order-cost-summary",
           "model": "commerce-order-cost-summary",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-cost-summary",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -490,11 +470,9 @@
           "id": "commerce-order-header",
           "model": "commerce-order-header",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-header",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -503,11 +481,9 @@
           "id": "commerce-order-product-list",
           "model": "commerce-order-product-list",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-product-list",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -516,11 +492,9 @@
           "id": "commerce-order-returns",
           "model": "commerce-order-returns",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-returns",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -529,11 +503,9 @@
           "id": "commerce-order-status",
           "model": "commerce-order-status",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-order-status",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -542,11 +514,8 @@
           "id": "commerce-orders-list",
           "model": "commerce-orders-list",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-orders-list",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -555,11 +524,9 @@
           "id": "commerce-return-header",
           "model": "commerce-return-header",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-return-header",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -568,11 +535,8 @@
           "id": "commerce-returns-list",
           "model": "commerce-returns-list",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-returns-list",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -581,11 +545,9 @@
           "id": "commerce-search-order",
           "model": "commerce-search-order",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-search-order",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -594,11 +556,9 @@
           "id": "commerce-shipping-status",
           "model": "commerce-shipping-status",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-shipping-status",
-                "template": {}
-              }
+            "da": {
+              "rows": 1,
+              "columns": 2
             }
           }
         },
@@ -607,11 +567,8 @@
           "id": "commerce-wishlist",
           "model": "commerce-wishlist",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/commerce-wishlist",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         }
@@ -626,11 +583,8 @@
           "id": "product-details",
           "model": "product-details",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/product-details",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -639,11 +593,8 @@
           "id": "product-list-page",
           "model": "product-list-page",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/product-list-page",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         },
@@ -652,11 +603,8 @@
           "id": "product-recommendations",
           "model": "product-recommendations",
           "plugins": {
-            "aem": {
-              "page": {
-                "resourceType": "blocks/product-recommendations",
-                "template": {}
-              }
+            "da": {
+              "type": "key-value-block"
             }
           }
         }
